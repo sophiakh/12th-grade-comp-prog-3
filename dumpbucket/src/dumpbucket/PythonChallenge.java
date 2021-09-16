@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class PythonChallenge {
   public static void main(String[] args) throws Exception{
-	//Exercise 2
+	//Exercise 2!!
     //this specifies what sequence of characters you want to find. in this case i'm looking for lowercase letters a through z
     Pattern pattern = Pattern.compile("()([a-z])");
 
