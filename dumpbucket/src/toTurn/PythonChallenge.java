@@ -1,4 +1,4 @@
-package dumpbucket;
+package toTurn;
 import java.net.*;
 import java.io.*;
 import java.util.regex.Matcher;
@@ -51,39 +51,50 @@ public class PythonChallenge {
     //Exercise 4
     //http://www.pythonchallenge.com/pc/def/linkedlist.php
     
-    String urlString = "http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=8022";
+    String urlString = "http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345";
     
     //Create the URL
     URL url = new URL(urlString);
 
     // open the url stream, wrap it an a few "readers"
-
-    BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-    
+    	
     Pattern pattern4 = Pattern.compile("and the next nothing is (\\d+)");
+    BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 
     // write the output to print
     String line = "";
-    String text = "";
-    String nums;
+    String nums = "";
     
-    while ((line = reader.readLine()) != null)
+    for (int i = 400; i > 0; i--)
     {
-    	text += line;
-    	System.out.println(line);
-    	nums = find2(line, pattern4);
-    	
-    	if(nums == "none")
-    	{
-    		System.out.println("NONE FOUND!");
-    		break;
-    	}
-
-    	String nURLString = urlString.substring(0, 61) + nums;
-    	URL nURL = new URL(nURLString);
-    	reader = new BufferedReader(new InputStreamReader(nURL.openStream()));
+    	String text = "";
+        while ((line = reader.readLine()) != null) {
+           text = text + line;
+        }
+        
+        System.out.println(text);
+        
+        if(text.equals("Yes. Divide by two and keep going."))
+        {
+        	String nURLString = urlString.substring(0, 61) + Integer.parseInt(nums)/2;
+        	URL nURL = new URL(nURLString);
+        	reader = new BufferedReader(new InputStreamReader(nURL.openStream()));
+        }
+        
+        else {
+        	nums = find2(text, pattern4);
+        	
+        	if(nums == "none")
+        	{
+        		System.out.println("END OF THE ROAD!");
+        		break;
+        	}
+        	String nURLString = urlString.substring(0, 61) + nums;
+        	URL nURL = new URL(nURLString);
+        	reader = new BufferedReader(new InputStreamReader(nURL.openStream()));
+        }
     }
-    
+    	
     // close our reader
     reader.close();
   }
