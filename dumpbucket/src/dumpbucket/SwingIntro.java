@@ -48,7 +48,7 @@ public class SwingIntro implements ActionListener
 		bar2.add(menu2);//adds second menu object to second bar object (for frame2)
 		
 		//Adds action listeners to the buttons 
-		but1.addActionListener(this);//"this" refers to the currently used instance of SwingIntro class, which implements ActionListener
+		but1.addActionListener(this);//"this" refers to the currently used instance of SwingIntro class, which implements ActionListener. This is why the "this" keyword works; it doesn't refer to but1 but to ONE instance of the entire class
 		but2.addActionListener(this);
 		but3.addActionListener(this);
 		m1.addActionListener(this);
