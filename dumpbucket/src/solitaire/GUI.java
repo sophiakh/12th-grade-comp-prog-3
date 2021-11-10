@@ -100,8 +100,16 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
        JPanel Found = new JPanel();
        Found.setOpaque(false);
        Found.setLayout(new FlowLayout(FlowLayout.CENTER));
-       Found.setMaximumSize(new Dimension(250, 563));
+       /*game.found.get(0).add(); add empty label with borders. 
+       game.found.get(1).add();
+       game.found.get(2).add();
+       game.found.get(3).add();
+       */
        Found.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.MAGENTA));
+	   
+	/*
+	
+	*/
        
        /*******
         * This is just a test to make sure images are being read correctly on your machine. Please replace
@@ -176,7 +184,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
    
    	public JLayeredPane drawPile(Stack<Card> stackIn) {
 	    Object cards[];
-	    cards = stackIn.toArray(); //please note we convert this stack to an array so that we can iterate through it backwards while drawing. You’ll need to cast each element inside cards to a <Card> in order to use the methods to adjust their position
+	    cards = stackIn.toArray(); //please note we convert this stack to an array so that we can iterate through it backwards while drawing. Youâ€™ll need to cast each element inside cards to a <Card> in order to use the methods to adjust their position
 	    JLayeredPane ret = new JLayeredPane();
 	    ret.setPreferredSize(new Dimension(60, 563)); //JLayeredPanes want you to specify everything, including size
 	    
