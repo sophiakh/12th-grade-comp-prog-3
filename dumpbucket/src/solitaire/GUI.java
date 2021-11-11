@@ -101,16 +101,14 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
        Found.setOpaque(false);
        Found.setLayout(new FlowLayout(FlowLayout.CENTER));
        /*
-       double opacity = 0.5;
-       //AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER,opacity);
        Card foundHeart = new Card(1, Suit.Hearts);
        Card foundDiamond = new Card(1, Suit.Diamonds);
        Card foundClub = new Card(1, Suit.Clubs);
        Card foundSpade = new Card(1, Suit.Spades);
-       foundHeart.setComposite(ac);
-       foundDiamond.setComposite(ac);
-       foundClub.setComposite(ac);
-       foundSpade.setComposite(ac);
+       foundHeart.setBackground(new Color(0, 0, 0, 50));
+       foundDiamond.setBackground(new Color(0, 0, 0, 50));
+       foundClub.setBackground(new Color(0, 0, 0, 50));
+       foundSpade.setBackground(new Color(0, 0, 0, 50));
        game.found.get(0).add(foundHeart); 
        game.found.get(1).add(foundDiamond);
        game.found.get(2).add(foundClub);
